@@ -1,11 +1,9 @@
 import React from 'react'
-//import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-
 import Login from './components/login.js'
 import SignUp from './components/signup.js'
-
 function App() {
   return (
     <Router>
@@ -13,7 +11,7 @@ function App() {
         <nav className="navbar navbar-expand-lg navbar-light fixed-top">
           <div className="container">
             <Link className="navbar-brand" to={'/sign-in'}>
-              positronX
+              Gymrecords
             </Link>
             <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul className="navbar-nav ml-auto">
@@ -31,7 +29,6 @@ function App() {
             </div>
           </div>
         </nav>
-
         <div className="auth-wrapper">
           <div className="auth-inner">
             <Routes>
@@ -45,5 +42,4 @@ function App() {
     </Router>
   )
 }
-
 export default App
