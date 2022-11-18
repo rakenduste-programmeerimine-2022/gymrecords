@@ -3,8 +3,10 @@
   box-sizing: border-box;
 }
 body {
-  background: url("./pics/gym.gif") !important;
+  background-image: url("./pics/gym.gif") !important;
   background-repeat: no-repeat;
+  background-size: cover;
+  
   min-height: 100vh;
   display: flex;
   font-weight: 400;
