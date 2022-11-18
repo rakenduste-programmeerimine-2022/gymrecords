@@ -74,5 +74,5 @@ body, html, .App, #root, .auth-wrapper {
 }
 
 .statistics {
-  background-color: red;
+  display: flex;
 }

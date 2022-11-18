@@ -3,6 +3,7 @@ export default class Main extends Component {
     render() {
         return (
             <form>
+                <h3>MAIN</h3>
                 <div class="statistics">
 
                     <div class="workout-amount">
