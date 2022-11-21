@@ -2,11 +2,9 @@
 * {
   box-sizing: border-box;
 }
-body {
-  
+body { 
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 100vh;
   display: flex;
   font-weight: 400;
   font-family: 'Fira Sans', sans-serif;
@@ -18,12 +16,12 @@ h1,h2,h3,h4,h5,h6,label,span {
 }
 
 body, html, .App, #root, .auth-wrapper {
-  width: 100%;
+  justify-content: center;
   height: 100%;
 }
 
 .navbar-light {
-  background-color: #ffffff;
+  background-color: #a0ffdb;
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
 }
 
@@ -35,7 +33,8 @@ body, html, .App, #root, .auth-wrapper {
 }
 
 .auth-inner {
-  width: 450px;
+  width: 1500px;
+  height: 700px;
   margin: auto;
   background: #ffffff;
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
@@ -74,5 +73,25 @@ body, html, .App, #root, .auth-wrapper {
 }
 
 .statistics {
+  margin: 50px;
+  width: auto;
+  height: 120px;
   display: flex;
+  padding: auto;
 }
+
+.stats {
+  margin: 2px;
+  text-align:center;
+  display: inline-block;
+}
+
+.records{
+  float: left;
+}
+
+.records:hover {
+  background-color: grey;
+}
+
+
