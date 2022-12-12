@@ -94,4 +94,7 @@ body, html, .App, #root, .auth-wrapper {
   background-color: grey;
 }
 
-
+.workouts{
+  float: left;
+  clear: left;
+}
