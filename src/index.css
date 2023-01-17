@@ -94,7 +94,6 @@ body, html, .App, #root, .auth-wrapper {
   background-color: grey;
 }
 
-<<<<<<< HEAD
 .achievements {
   margin: 50px;
   width: auto;
@@ -109,9 +108,7 @@ body, html, .App, #root, .auth-wrapper {
   display: inline-block;
 }
 
-=======
 .workouts{
   float: left;
   clear: left;
 }
->>>>>>> 00a3e2632b95be122aede97bb158fb33afdb94af
