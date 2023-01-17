@@ -1,11 +1,21 @@
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  Navigate,
+} from "react-router-dom";
 import Login from "./components/login.js";
 import SignUp from "./components/signup.js";
 import Main from "./components/main.js";
-function App() {
+import Acheivements from "./components/achievements.js";
+import { useAuthContext } from "./hooks/useAuthContext";
+
+const App = () => {
+  const { user } = useAuthContext();
   return (
     <Router>
       <div className="App">
@@ -31,6 +41,11 @@ function App() {
                     main
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to={"/ACHIEVEMENTS"}>
+                    Acheivements
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -40,13 +55,17 @@ function App() {
             <Routes>
               <Route exact path="/" element={<Login />} />
               <Route path="/log-in" element={<Login />} />
-              <Route path="/sign-up" element={<SignUp />} />
+              <Route
+                path="/sign-up"
+                element={!user ? <SignUp /> : <Navigate to="/" />}
+              />
               <Route path="/MAIN" element={<Main />} />
+              <Route path="/ACHIEVEMENTS" element={<Acheivements />} />
             </Routes>
           </div>
         </div>
       </div>
     </Router>
   );
-}
+};
 export default App;
