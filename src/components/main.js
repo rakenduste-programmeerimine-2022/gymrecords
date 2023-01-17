@@ -81,7 +81,6 @@ function Main() {
                         <br></br>
                         <br></br>
                         <div>
-                            <button onClick={addInput}>+</button>
                             {arr.map((item, i) => {
                                 return (
                                     <input
@@ -89,10 +88,11 @@ function Main() {
                                     value={item.value}
                                     id={i}
                                     type={item.type}
-                                    size="40"
+                                    size="60"
                                 />
                             );
                         })}
+                        <button onClick={addInput}>+</button>
                         </div>
                     </Popup>
                 </div>
