@@ -1,17 +1,20 @@
 import { useState } from "react";
+import { useSignUp } from "../hooks/useSignUp";
 
 const SignUp = ({}) => {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const { signup } = useSignUp();
 
-  const handleFormSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(firstname, lastname, password, email);
+
+    await signup(firstname, lastname, email, password);
   };
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form className="signup" onSubmit={handleSubmit}>
       <h3>Sign Up</h3>
       <div className="mb-3">
         <label>First name</label>
