@@ -8,7 +8,7 @@ const bodyParser = require("body-parser");
 router.use(bodyParser.urlencoded({ extended: true }));
 
 router.post(
-  "/sign-up",
+  "/log-in",
   body("email").isEmail(),
   body("password").isLength({ min: 8 }),
   userController.signupUser
