@@ -8,6 +8,8 @@ let cors = require("cors");
 const app = express();
 const PORT = 8080;
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(morgan("dev"));
 
 app.use(function (req, res, next) {
@@ -31,9 +33,9 @@ mongoose
   .then(() => console.log("Database connection established"))
   .catch((e) => console.error(e));
 
-app.use("/api/user", userRouter);
+//app.use("/api/user", userRouter);
+app.use("/api/user", require('./routes/user.routes'));
 app.use(cors()); //inside cors(corsOptions)
-app.use(express.json());
 
 app.get("*", (req, res) => {
   res.send("404");
