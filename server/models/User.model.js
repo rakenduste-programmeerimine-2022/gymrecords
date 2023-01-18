@@ -1,7 +1,8 @@
-const { Schema, model } = require("mongoose");
-const bcrypt = require("bcrypt");
+//const { Schema, model } = require("mongoose");
+//const bcrypt = require("bcrypt");
+const mongoose = require('mongoose')
 
-const userSchema = new Schema(
+/*const userSchema = new Schema(
   {
     firstname: { type: String, required: true },
     lastname: { type: String, required: true },
@@ -44,4 +45,25 @@ userSchema.statics.signup = async function (
 
 const User = model("User", userSchema);
 
-module.exports = User;
+module.exports = User;*/
+
+const userSchema = mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, 'Please add a name']
+  },
+  email: {
+    type: String,
+    required: [true, 'Please add an email'],
+    unique: true
+  },
+  password: {
+    type: String,
+    required: [true, 'Please add a password']
+  },
+},
+{
+  timestamps: true
+})
+
+module.exports = mongoose.model('User', userSchema)

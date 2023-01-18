@@ -16,4 +16,4 @@ const requireAuth = async (req, res, next) => {
     res.status(401).json({ error: "Request is not verified" });
   }
 };
-module.exports = requireAuth;
+module.exports = requireAuth; 

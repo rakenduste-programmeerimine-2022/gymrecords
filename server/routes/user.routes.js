@@ -1,4 +1,4 @@
-const express = require("express");
+/*const express = require("express");
 const router = express.Router();
 const userController = require("../controllers/user.controller");
 const { body } = require("express-validator");
@@ -14,4 +14,15 @@ router.post(
   userController.signupUser
 );
 
-module.exports = router;
+module.exports = router; */
+
+const express = require('express')
+const router = express.Router()
+const { registerUser, loginUser, getMe } = require('../controllers/user.controller')
+const { protect } = require('../middleware/authMiddleware')
+
+router.post('/', registerUser)
+router.post('/login', loginUser)
+router.get('/me', protect, getMe)
+
+module.exports = router
