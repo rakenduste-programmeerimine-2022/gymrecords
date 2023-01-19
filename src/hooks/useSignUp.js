@@ -1,4 +1,4 @@
-import { useAuthContext } from "./useAuthContext";
+/* import { useAuthContext } from "./useAuthContext";
 export const useSignUp = () => {
   const { dispatch } = useAuthContext();
   const signup = async (firstname, lastname, email, password) => {
@@ -19,4 +19,4 @@ export const useSignUp = () => {
     }
   };
   return { signup };
-};
+}; */

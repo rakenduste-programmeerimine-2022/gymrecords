@@ -1,4 +1,4 @@
-import React from 'react'
+/*import React from 'react'
 import './Popup.css'
 
 function Popup(props) {
@@ -12,4 +12,4 @@ function Popup(props) {
   ) : "";
 }
 
-export default Popup
+export default Popup */

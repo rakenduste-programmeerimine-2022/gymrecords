@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
-const userRouter = require("./routes/user.routes");
+//const userRouter = require("./routes/user.routes");
 require("dotenv").config();
 let cors = require("cors");
 
@@ -27,7 +27,7 @@ app.use((req, res, next) => {
   next();
 });
 
-const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster1.jjzwtcg.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://Taavet:qSjdPv6qKTYWFB88@cluster1.jjzwtcg.mongodb.net/?retryWrites=true&w=majority`;
 mongoose
   .connect(uri)
   .then(() => console.log("Database connection established"))
@@ -35,7 +35,8 @@ mongoose
 
 //app.use("/api/user", userRouter);
 app.use("/api/user", require('./routes/user.routes'));
-app.use(cors()); //inside cors(corsOptions)
+app.use('/api/notes', require('./routes/noteRoutes'));
+//app.use(cors()); //inside cors(corsOptions)
 
 app.get("*", (req, res) => {
   res.send("404");

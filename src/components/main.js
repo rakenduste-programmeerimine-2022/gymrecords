@@ -1,4 +1,4 @@
-import Popup from "./Popup.js";
+/* import Popup from "./Popup.js";
 import { useState } from "react";
 
 function Main() {
@@ -100,4 +100,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Main; */

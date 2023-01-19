@@ -1,4 +1,4 @@
-import { createContext, useReducer, useEffect } from "react";
+/*import { createContext, useReducer, useEffect } from "react";
 
 export const AuthContext = createContext();
 export const authReducer = (state, action) => {
@@ -28,4 +28,4 @@ export const AuthContextProvider = ({ children }) => {
       {children}
     </AuthContext.Provider>
   );
-};
+}; */

@@ -9,9 +9,11 @@ const noteSchema = mongoose.Schema(
         },
         text: {
             type: String,
-            required: true
+            required: [true, 'Please add a text value']
         }
 },
 {
     timestamps: true
 })
+
+module.exports = mongoose.model('Note', noteSchema)
