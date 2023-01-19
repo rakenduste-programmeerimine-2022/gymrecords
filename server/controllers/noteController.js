@@ -31,14 +31,12 @@ const updateNote = asyncHandler(async (req, res) => {
         throw new Error('Note not found')
     }
 
-    const user = await User.findById(req.user.id)
-
-    if(!user) {
+    if(!req.user) {
         res.status(401)
         throw new Error('User not found')
     }
 
-    if(note.user.toString() !== user.id) {
+    if(note.user.toString() !== req.user.id) {
         res.status(401)
         throw new Error('User not authorized')
     }
@@ -58,14 +56,12 @@ const deleteNote = asyncHandler(async (req, res) => {
         throw new Error('Note not found')
     }
 
-    const user = await User.findById(req.user.id)
-
-    if(!user) {
+    if(!req.user) {
         res.status(401)
         throw new Error('User not found')
     }
 
-    if(note.user.toString() !== user.id) {
+    if(note.user.toString() !== req.user.id) {
         res.status(401)
         throw new Error('User not authorized')
     }
