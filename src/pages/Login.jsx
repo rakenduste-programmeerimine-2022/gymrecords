@@ -6,7 +6,7 @@ import {FaSignInAlt} from 'react-icons/fa'
 function Login() {
   const [formData, setFormData] = useState({
     email: '',
-    password: '',
+    password: ''
   })
 
   const {email, password} = formData
@@ -35,7 +35,7 @@ function Login() {
         <form onSubmit={onSubmit}>
           <div className="form-group">
             <input 
-              type="text" 
+              type="email" 
               className="form-control" 
               id='email' 
               name='email' 
