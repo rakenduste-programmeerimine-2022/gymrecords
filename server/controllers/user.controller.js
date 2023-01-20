@@ -54,7 +54,7 @@ const registerUser = asyncHandler(async (req, res) => {
     _id: user.id,
     name: user.name,
     email: user.email,
-    token: generateToken(user._id)
+    token: generateToken(user.id)
     })
   } else {
     res.status(400)
@@ -85,11 +85,11 @@ const loginUser = asyncHandler(async (req, res) => {
 
 // Get user data
 const getMe = asyncHandler(async (req, res) => {
-  res.json({message: 'User data'})
+  res.status(200).json(req.user)
 })
 
 const generateToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, {
+  return jwt.sign({ id }, `${process.env.JWT_SECRET_KEY}`, {
     expiresIn: '30d',
   })
 }
